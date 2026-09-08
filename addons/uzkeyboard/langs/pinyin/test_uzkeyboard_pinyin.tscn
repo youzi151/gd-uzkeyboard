@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://xpri8olgpj5q"]
+
+[ext_resource type="Script" uid="uid://drvoes1dav4vk" path="res://addons/uzkeyboard/_test/test_uzkeyboard.gd" id="1_test"]
+[ext_resource type="Script" uid="uid://cyav80vwlor2r" path="res://addons/uzkeyboard/scripts/uzkeyboard.gd" id="2_kb"]
+[ext_resource type="PackedScene" uid="uid://b76j7xcdoaw8n" path="res://addons/uzkeyboard/langs/pinyin/uzkeyboard_view_pinyin.tscn" id="3_view"]
+
+[node name="TestUzKeyboardPinyin" type="Control" unique_id=1740519352 node_paths=PackedStringArray("output_label", "keyboard")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_test")
+output_label = NodePath("OutputLabel")
+keyboard = NodePath("UzKeyboard")
+
+[node name="OutputLabel" type="Label" parent="." unique_id=914716605]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = 80.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 28
+autowrap_mode = 3
+
+[node name="UzKeyboard" type="Control" parent="." unique_id=788576516 node_paths=PackedStringArray("composition_view", "candidates_view", "keys_view")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_kb")
+lang_pack = &"pinyin"
+composition_view = NodePath("pinyin")
+candidates_view = NodePath("pinyin")
+keys_view = NodePath("pinyin")
+
+[node name="pinyin" parent="UzKeyboard" unique_id=362205862 instance=ExtResource("3_view")]
+layout_mode = 1

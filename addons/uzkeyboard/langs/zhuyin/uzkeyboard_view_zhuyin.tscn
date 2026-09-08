@@ -1,0 +1,940 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2c7ahlqrwxnc"]
+
+[ext_resource type="Script" uid="uid://2ogteu00470s" path="res://addons/uzkeyboard/langs/zhuyin/uzkeyboard_view_zhuyin.gd" id="1_view"]
+
+[node name="uzkeyboard_view_zhuyin" type="Control" node_paths=PackedStringArray("composition_label", "candidates", "layer_bpmf", "layer_en", "layer_sym", "bar_candi")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_view")
+composition_label = NodePath("margin/layout/keys/func/composition_label")
+candidates = NodePath("margin/layout/keys/func/candidate_scroll/candidates")
+layer_bpmf = NodePath("margin/layout/keys/layers/layer_bpmf")
+layer_en = NodePath("margin/layout/keys/layers/layer_en")
+layer_sym = NodePath("margin/layout/keys/layers/layer_sym")
+bar_candi = NodePath("margin/layout/keys/func")
+
+[node name="margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -64.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="bg" type="ColorRect" parent="margin"]
+layout_mode = 2
+color = Color(0, 0, 0, 0.18039216)
+
+[node name="layout" type="VBoxContainer" parent="margin"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="keys" type="VBoxContainer" parent="margin/layout"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="func" type="HBoxContainer" parent="margin/layout/keys"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="composition_label" type="Label" parent="margin/layout/keys/func"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+
+[node name="candidate_scroll" type="ScrollContainer" parent="margin/layout/keys/func"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 9.33
+vertical_scroll_mode = 0
+
+[node name="candidates" type="HBoxContainer" parent="margin/layout/keys/func/candidate_scroll"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 6
+
+[node name="hide" type="Button" parent="margin/layout/keys/func"]
+visible = false
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "▼"
+
+[node name="layers" type="VBoxContainer" parent="margin/layout/keys"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+alignment = 2
+
+[node name="layer_bpmf" type="VBoxContainer" parent="margin/layout/keys/layers"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 4
+alignment = 2
+
+[node name="row_1" type="HBoxContainer" parent="margin/layout/keys/layers/layer_bpmf"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="b" type="Button" parent="margin/layout/keys/layers/layer_bpmf/row_1"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ㄅ"
+
+[node name="d" type="Button" parent="margin/layout/keys/layers/layer_bpmf/row_1"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ㄉ"
+
+[node name="tone_3" type="Button" parent="margin/layout/keys/layers/layer_bpmf/row_1"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ˇ"
+
+[node name="zh" type="Button" parent="margin/layout/keys/layers/layer_bpmf/row_1"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ㄓ"
+
+[node name="tone_4" type="Button" parent="margin/layout/keys/layers/layer_bpmf/row_1"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ˋ"
+
+[node name="tone_2" type="Button" parent="margin/layout/keys/layers/layer_bpmf/row_1"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ˊ"
+
+[node name="tone_5" type="Button" parent="margin/layout/keys/layers/layer_bpmf/row_1"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "˙"
+
+[node name="a" type="Button" parent="margin/layout/keys/layers/layer_bpmf/row_1"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ㄚ"
+
+[node name="ai" type="Button" parent="margin/layout/keys/layers/layer_bpmf/row_1"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ㄞ"
+
+[node name="an" type="Button" parent="margin/layout/keys/layers/layer_bpmf/row_1"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ㄢ"
+
+[node name="er" type="Button" parent="margin/layout/keys/layers/layer_bpmf/row_1"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ㄦ"
+
+[node name="row_2" type="HBoxContainer" parent="margin/layout/keys/layers/layer_bpmf"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="p" type="Button" parent="margin/layout/keys/layers/layer_bpmf/row_2"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ㄆ"
+
+[node name="t" type="Button" parent="margin/layout/keys/layers/layer_bpmf/row_2"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ㄊ"
+
+[node name="g" type="Button" parent="margin/layout/keys/layers/layer_bpmf/row_2"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ㄍ"
+
+[node name="j" type="Button" parent="margin/layout/keys/layers/layer_bpmf/row_2"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ㄐ"
+
+[node name="ch" type="Button" parent="margin/layout/keys/layers/layer_bpmf/row_2"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ㄔ"
+
+[node name="z" type="Button" parent="margin/layout/keys/layers/layer_bpmf/row_2"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ㄗ"
+
+[node name="i" type="Button" parent="margin/layout/keys/layers/layer_bpmf/row_2"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ㄧ"
+
+[node name="o" type="Button" parent="margin/layout/keys/layers/layer_bpmf/row_2"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ㄛ"
+
+[node name="ei" type="Button" parent="margin/layout/keys/layers/layer_bpmf/row_2"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ㄟ"
+
+[node name="en" type="Button" parent="margin/layout/keys/layers/layer_bpmf/row_2"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ㄣ"
+
+[node name="row_3" type="HBoxContainer" parent="margin/layout/keys/layers/layer_bpmf"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="m" type="Button" parent="margin/layout/keys/layers/layer_bpmf/row_3"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ㄇ"
+
+[node name="n" type="Button" parent="margin/layout/keys/layers/layer_bpmf/row_3"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ㄋ"
+
+[node name="k" type="Button" parent="margin/layout/keys/layers/layer_bpmf/row_3"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ㄎ"
+
+[node name="q" type="Button" parent="margin/layout/keys/layers/layer_bpmf/row_3"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ㄑ"
+
+[node name="sh" type="Button" parent="margin/layout/keys/layers/layer_bpmf/row_3"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ㄕ"
+
+[node name="c" type="Button" parent="margin/layout/keys/layers/layer_bpmf/row_3"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ㄘ"
+
+[node name="u" type="Button" parent="margin/layout/keys/layers/layer_bpmf/row_3"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ㄨ"
+
+[node name="e" type="Button" parent="margin/layout/keys/layers/layer_bpmf/row_3"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ㄜ"
+
+[node name="au" type="Button" parent="margin/layout/keys/layers/layer_bpmf/row_3"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ㄠ"
+
+[node name="ang" type="Button" parent="margin/layout/keys/layers/layer_bpmf/row_3"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ㄤ"
+
+[node name="row_4" type="HBoxContainer" parent="margin/layout/keys/layers/layer_bpmf"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="f" type="Button" parent="margin/layout/keys/layers/layer_bpmf/row_4"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ㄈ"
+
+[node name="l" type="Button" parent="margin/layout/keys/layers/layer_bpmf/row_4"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ㄌ"
+
+[node name="h" type="Button" parent="margin/layout/keys/layers/layer_bpmf/row_4"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ㄏ"
+
+[node name="x" type="Button" parent="margin/layout/keys/layers/layer_bpmf/row_4"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ㄒ"
+
+[node name="r" type="Button" parent="margin/layout/keys/layers/layer_bpmf/row_4"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ㄖ"
+
+[node name="s" type="Button" parent="margin/layout/keys/layers/layer_bpmf/row_4"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ㄙ"
+
+[node name="iu" type="Button" parent="margin/layout/keys/layers/layer_bpmf/row_4"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ㄩ"
+
+[node name="eh" type="Button" parent="margin/layout/keys/layers/layer_bpmf/row_4"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ㄝ"
+
+[node name="ou" type="Button" parent="margin/layout/keys/layers/layer_bpmf/row_4"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ㄡ"
+
+[node name="eng" type="Button" parent="margin/layout/keys/layers/layer_bpmf/row_4"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "ㄥ"
+
+[node name="row_5" type="HBoxContainer" parent="margin/layout/keys/layers/layer_bpmf"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="to_en" type="Button" parent="margin/layout/keys/layers/layer_bpmf/row_5"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "En"
+
+[node name="to_sym" type="Button" parent="margin/layout/keys/layers/layer_bpmf/row_5"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "@#?"
+
+[node name="space" type="Button" parent="margin/layout/keys/layers/layer_bpmf/row_5"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 8.3
+focus_mode = 0
+text = "空白"
+
+[node name="backspace" type="Button" parent="margin/layout/keys/layers/layer_bpmf/row_5"]
+custom_minimum_size = Vector2(120, 44)
+layout_mode = 2
+focus_mode = 0
+text = "←"
+
+[node name="layer_en" type="VBoxContainer" parent="margin/layout/keys/layers"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 4
+alignment = 2
+
+[node name="row_1" type="HBoxContainer" parent="margin/layout/keys/layers/layer_en"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="q" type="Button" parent="margin/layout/keys/layers/layer_en/row_1"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "q"
+
+[node name="w" type="Button" parent="margin/layout/keys/layers/layer_en/row_1"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "w"
+
+[node name="e" type="Button" parent="margin/layout/keys/layers/layer_en/row_1"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "e"
+
+[node name="r" type="Button" parent="margin/layout/keys/layers/layer_en/row_1"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "r"
+
+[node name="t" type="Button" parent="margin/layout/keys/layers/layer_en/row_1"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "t"
+
+[node name="y" type="Button" parent="margin/layout/keys/layers/layer_en/row_1"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "y"
+
+[node name="u" type="Button" parent="margin/layout/keys/layers/layer_en/row_1"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "u"
+
+[node name="i" type="Button" parent="margin/layout/keys/layers/layer_en/row_1"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "i"
+
+[node name="o" type="Button" parent="margin/layout/keys/layers/layer_en/row_1"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "o"
+
+[node name="p" type="Button" parent="margin/layout/keys/layers/layer_en/row_1"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "p"
+
+[node name="row_2" type="HBoxContainer" parent="margin/layout/keys/layers/layer_en"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="a" type="Button" parent="margin/layout/keys/layers/layer_en/row_2"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "a"
+
+[node name="s" type="Button" parent="margin/layout/keys/layers/layer_en/row_2"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "s"
+
+[node name="d" type="Button" parent="margin/layout/keys/layers/layer_en/row_2"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "d"
+
+[node name="f" type="Button" parent="margin/layout/keys/layers/layer_en/row_2"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "f"
+
+[node name="g" type="Button" parent="margin/layout/keys/layers/layer_en/row_2"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "g"
+
+[node name="h" type="Button" parent="margin/layout/keys/layers/layer_en/row_2"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "h"
+
+[node name="j" type="Button" parent="margin/layout/keys/layers/layer_en/row_2"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "j"
+
+[node name="k" type="Button" parent="margin/layout/keys/layers/layer_en/row_2"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "k"
+
+[node name="l" type="Button" parent="margin/layout/keys/layers/layer_en/row_2"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "l"
+
+[node name="row_3" type="HBoxContainer" parent="margin/layout/keys/layers/layer_en"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="z" type="Button" parent="margin/layout/keys/layers/layer_en/row_3"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "z"
+
+[node name="x" type="Button" parent="margin/layout/keys/layers/layer_en/row_3"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "x"
+
+[node name="c" type="Button" parent="margin/layout/keys/layers/layer_en/row_3"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "c"
+
+[node name="v" type="Button" parent="margin/layout/keys/layers/layer_en/row_3"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "v"
+
+[node name="b" type="Button" parent="margin/layout/keys/layers/layer_en/row_3"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "b"
+
+[node name="n" type="Button" parent="margin/layout/keys/layers/layer_en/row_3"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "n"
+
+[node name="m" type="Button" parent="margin/layout/keys/layers/layer_en/row_3"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "m"
+
+[node name="row_4" type="HBoxContainer" parent="margin/layout/keys/layers/layer_en"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="to_bpmf" type="Button" parent="margin/layout/keys/layers/layer_en/row_4"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "中"
+
+[node name="to_sym" type="Button" parent="margin/layout/keys/layers/layer_en/row_4"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "@#?"
+
+[node name="shift" type="Button" parent="margin/layout/keys/layers/layer_en/row_4"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "A/a"
+
+[node name="space" type="Button" parent="margin/layout/keys/layers/layer_en/row_4"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 8.3
+focus_mode = 0
+text = "空白"
+
+[node name="backspace" type="Button" parent="margin/layout/keys/layers/layer_en/row_4"]
+custom_minimum_size = Vector2(120, 44)
+layout_mode = 2
+focus_mode = 0
+text = "←"
+
+[node name="layer_sym" type="VBoxContainer" parent="margin/layout/keys/layers"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 4
+alignment = 2
+
+[node name="row_1" type="HBoxContainer" parent="margin/layout/keys/layers/layer_sym"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="1" type="Button" parent="margin/layout/keys/layers/layer_sym/row_1"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "1"
+
+[node name="2" type="Button" parent="margin/layout/keys/layers/layer_sym/row_1"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "2"
+
+[node name="3" type="Button" parent="margin/layout/keys/layers/layer_sym/row_1"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "3"
+
+[node name="4" type="Button" parent="margin/layout/keys/layers/layer_sym/row_1"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "4"
+
+[node name="5" type="Button" parent="margin/layout/keys/layers/layer_sym/row_1"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "5"
+
+[node name="6" type="Button" parent="margin/layout/keys/layers/layer_sym/row_1"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "6"
+
+[node name="7" type="Button" parent="margin/layout/keys/layers/layer_sym/row_1"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "7"
+
+[node name="8" type="Button" parent="margin/layout/keys/layers/layer_sym/row_1"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "8"
+
+[node name="9" type="Button" parent="margin/layout/keys/layers/layer_sym/row_1"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "9"
+
+[node name="0" type="Button" parent="margin/layout/keys/layers/layer_sym/row_1"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "0"
+
+[node name="row_2" type="HBoxContainer" parent="margin/layout/keys/layers/layer_sym"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="at" type="Button" parent="margin/layout/keys/layers/layer_sym/row_2"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "@"
+
+[node name="hash" type="Button" parent="margin/layout/keys/layers/layer_sym/row_2"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "#"
+
+[node name="dollar" type="Button" parent="margin/layout/keys/layers/layer_sym/row_2"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "$"
+
+[node name="percent" type="Button" parent="margin/layout/keys/layers/layer_sym/row_2"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "%"
+
+[node name="amp" type="Button" parent="margin/layout/keys/layers/layer_sym/row_2"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "&"
+
+[node name="star" type="Button" parent="margin/layout/keys/layers/layer_sym/row_2"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "*"
+
+[node name="minus" type="Button" parent="margin/layout/keys/layers/layer_sym/row_2"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "-"
+
+[node name="plus" type="Button" parent="margin/layout/keys/layers/layer_sym/row_2"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "+"
+
+[node name="lpar" type="Button" parent="margin/layout/keys/layers/layer_sym/row_2"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "("
+
+[node name="rpar" type="Button" parent="margin/layout/keys/layers/layer_sym/row_2"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = ")"
+
+[node name="row_3" type="HBoxContainer" parent="margin/layout/keys/layers/layer_sym"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="bang" type="Button" parent="margin/layout/keys/layers/layer_sym/row_3"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "!"
+
+[node name="quest" type="Button" parent="margin/layout/keys/layers/layer_sym/row_3"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "?"
+
+[node name="comma" type="Button" parent="margin/layout/keys/layers/layer_sym/row_3"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = ","
+
+[node name="dot" type="Button" parent="margin/layout/keys/layers/layer_sym/row_3"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "."
+
+[node name="apos" type="Button" parent="margin/layout/keys/layers/layer_sym/row_3"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "'"
+
+[node name="quot" type="Button" parent="margin/layout/keys/layers/layer_sym/row_3"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "\""
+
+[node name="colon" type="Button" parent="margin/layout/keys/layers/layer_sym/row_3"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = ":"
+
+[node name="semi" type="Button" parent="margin/layout/keys/layers/layer_sym/row_3"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = ";"
+
+[node name="slash" type="Button" parent="margin/layout/keys/layers/layer_sym/row_3"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "/"
+
+[node name="bslash" type="Button" parent="margin/layout/keys/layers/layer_sym/row_3"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "\\"
+
+[node name="row_4" type="HBoxContainer" parent="margin/layout/keys/layers/layer_sym"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="to_bpmf" type="Button" parent="margin/layout/keys/layers/layer_sym/row_4"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "中"
+
+[node name="to_en" type="Button" parent="margin/layout/keys/layers/layer_sym/row_4"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "En"
+
+[node name="ea_width" type="Button" parent="margin/layout/keys/layers/layer_sym/row_4"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "半"
+
+[node name="space" type="Button" parent="margin/layout/keys/layers/layer_sym/row_4"]
+custom_minimum_size = Vector2(40, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 8.3
+focus_mode = 0
+text = "空白"
+
+[node name="backspace" type="Button" parent="margin/layout/keys/layers/layer_sym/row_4"]
+custom_minimum_size = Vector2(120, 44)
+layout_mode = 2
+focus_mode = 0
+text = "←"

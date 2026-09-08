@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtw0x1amyuie8"]
+
+[ext_resource type="Script" uid="uid://drvoes1dav4vk" path="res://addons/uzkeyboard/_test/test_uzkeyboard.gd" id="1_kiuvr"]
+[ext_resource type="Script" uid="uid://cyav80vwlor2r" path="res://addons/uzkeyboard/scripts/uzkeyboard.gd" id="2_mmj70"]
+[ext_resource type="Script" uid="uid://dorpwyw3l4vmm" path="res://addons/uzkeyboard/langs/direct/uzkeyboard_view_direct.gd" id="3_cfwwk"]
+
+[node name="TestUzKeyboardExample" type="Control" node_paths=PackedStringArray("output_label", "keyboard")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kiuvr")
+output_label = NodePath("OutputLabel")
+keyboard = NodePath("Keyboard")
+
+[node name="OutputLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 16.0
+offset_top = 25.0
+offset_right = -16.0
+offset_bottom = 89.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 28
+autowrap_mode = 3
+
+[node name="Keyboard" type="Control" parent="." node_paths=PackedStringArray("composition_view", "candidates_view", "keys_view")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_mmj70")
+lang_pack = &"direct"
+composition_view = NodePath("view")
+candidates_view = NodePath("view")
+keys_view = NodePath("view")
+
+[node name="view" type="VBoxContainer" parent="Keyboard"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 2
+script = ExtResource("3_cfwwk")
